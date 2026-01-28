@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>제품 추가</title>
+    <style>
+        body { margin: 40px ;}
+        table { border-collapse:collapse; width:  70%; margin: 50px;}
+        th, td {border:  1px solid #ddd ; padding:  10px; text-align: center;}
+        th {background: #dddddd}
+    </style>
+
+</head>
+<body>
+
+<form action="/products" method="post">
+ <table>
+
+     <tr>
+         <td>ID</td>
+
+         <td>이름</td>
+         <td><input type="text" name="name"></td>
+         <td>설명</td>
+         <td><input type="text" name="description"></td>
+         <td>가격</td>
+         <td><input type="number" name="price"></td>
+         <td>재고</td>
+         <td><input type="number" name="stock"></td>
+     </tr>
+
+
+
+
+ </table>
+    <button type="submit"> 추가</button>
+
+
+</form>
+
+
+</body>
+</html>
