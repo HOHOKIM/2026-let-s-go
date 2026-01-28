@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @org.springframework.stereotype.Controller
 
 public class Controller {
-    private final ProductRepository repository;
+    private final ProductRepository  repository;
 
     public Controller(ProductRepository repository) {
         this.repository = repository;
