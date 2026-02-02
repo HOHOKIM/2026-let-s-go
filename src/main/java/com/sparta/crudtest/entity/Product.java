@@ -15,7 +15,7 @@ import lombok.Setter;
 public class Product {
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+     // Long 으로 바꿨음 변화 확인하기
      private Integer id;
 
      @Column(nullable = false, length = 100)

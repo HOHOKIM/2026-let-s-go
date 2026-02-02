@@ -17,17 +17,30 @@
 
     <tr>주문목록</tr>
     <table>
-        <tr>
-            <td>ID</td>
-            <td>이름</td>
-            <td><input type="text" name="name"></td>
-            <td>설명</td>
-            <td><input type="text" name="description"></td>
-            <td>가격</td>
-            <td><input type="number" name="price"></td>
-        </tr>
+        <td>주문번호</td>
+        <td>이름</td>
+        <td>설명</td>
+        <td>가격</td>
+        <td>재고</td>
+        <!-- 복습 th:each 반복문, o:${orders} 별명 달기  -->
+        <tr th:each="o: ${orders}">
+            <td th:text="${o.id}"></td>
+            <td th:text="${o.name}"></td>
+            <td th:text="${o.description}"></td>
+            <td th:text="${o.price}"></td>
+            <td th:text="${o.stock}"></td>
+        <td>
+            <!-- th:action ~~를정보 전달  데이터전달정도  -->
+            <form th:action="@{/orders/{id}/delete(id=${o.id})}" method="post">
+            <button type="submit"> 주문 취소 </button>
+            </form>
+        </td>
 
+        </tr>
+        <!-- 반복문끝-->
     </table>
+
+
 
 </form>
 <a href="product-list">

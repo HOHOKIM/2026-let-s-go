@@ -38,11 +38,13 @@ public class Controller {
         repository.save(product); //저장
     return "redirect:/product-list";
     }
+
    @PostMapping("/products/{id}/delete")
     public String deleteProduct(@PathVariable Integer id) {
        repository.deleteById(id);
        return "redirect:/product-list";//삭제
    }
+
    @GetMapping("/products/{id}/update")
     public String updateProduct(@PathVariable Integer id,Model model) {
         Product product =repository.findById(id).orElseThrow();
