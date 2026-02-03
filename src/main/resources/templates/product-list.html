@@ -10,11 +10,22 @@
         th {background: #dddddd}
     </style>
 </head>
+
+
 <body>
- <h1> 목록 </h1>
+
+<!-- 에러  팝업으로 띄우기 -->
+<script th:if="${errorMessage}" th:inline="javascript">
+    alert('[[${errorMessage}]]');
+</script>
+
+
+
+
+ <h1> 목록
      <a href="product-new"> 새 상품 추가하기 </a>
      <a href="product-order">주문 목록 확인하기</a>
-
+ </h1>
 <table>
     <tr>
         <td>ID</td>
