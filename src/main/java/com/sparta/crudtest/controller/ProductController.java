@@ -53,6 +53,7 @@ public class ProductController {
         model.addAttribute("product",product);
         return "product-update"; //수정폼 열기
     }
+
     @PostMapping("/products/{id}/update")
     public String outUpdate(@PathVariable Long id, @ModelAttribute ProductRequestDto dto) {
         dto.setId(id);
