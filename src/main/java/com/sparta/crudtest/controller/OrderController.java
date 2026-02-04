@@ -11,8 +11,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+//  컨트롤 o 옵티마이저 (임포트자동)
+//  컨트롤러 만들고 서비스 만들면 마우스누르고 컨트롤 우클릭 서비스 자동생성
 @Controller
 public class OrderController {
+
 
     private final ProductRepository productRepository;
     private final OrderRepository orderRepository;
@@ -25,7 +28,7 @@ public class OrderController {
 
     @PostMapping("/orders/{id}")
     // 아이디 오류 생겨서 Long 에서 Integer로 바뀐거 생각하기
-    public String createOrder(@PathVariable Integer id, Model model, RedirectAttributes redirectAttributes) {
+    public String createOrder(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
         // 상품 조회
         Product product = productRepository.findById(id).orElseThrow();
 
@@ -33,6 +36,7 @@ public class OrderController {
             redirectAttributes.addFlashAttribute("errorMessage","재고없음");
             return "redirect:/product-list";
         }
+
 
         // 주문 객체 생성
         Order order = new Order();

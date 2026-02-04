@@ -12,7 +12,7 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Integer id;   // 기본 키
+    private Long id;   // 기본 키
     private Long productId;
     private String name;
     private Double price;
